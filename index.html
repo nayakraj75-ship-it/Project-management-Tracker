@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Site Management Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Site Management Tracker</h1>
+    <p class="subtitle">Tasks with offline saving (localStorage)</p>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="site">Site Management</button>
+    <button class="tab-btn" data-tab="tender">Tender Management</button>
+    <button class="tab-btn" data-tab="cost">Cost Management</button>
+    <button class="tab-btn" data-tab="drawing">Drawing Management</button>
+    <button class="tab-btn" data-tab="today">Today's Task</button>
+  </nav>
+
+  <main>
+    <!-- Site Management -->
+    <section class="tab-panel active" id="tab-site">
+      <h2>Site Management</h2>
+      <form class="task-form" data-category="site">
+        <div class="grid">
+          <label>Task Name<input required name="name" placeholder="e.g. Snag list for 5th floor"/></label>
+          <label>Start Date<input required type="date" name="startDate"/></label>
+          <label>End Date<input required type="date" name="endDate"/></label>
+          <label>Assign to (Person)<input required name="assignedTo" placeholder="e.g. Akash"/></label>
+          <label>Priority
+            <select name="priority" required>
+              <option value="Low">Low</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="High">High</option>
+            </select>
+          </label>
+          <label>Status
+            <select name="status" required>
+              <option value="Open" selected>Open</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </label>
+          <label>Floor
+            <input name="floor" placeholder="e.g. Basement / GF / 1 / 2 / Mezzanine" />
+          </label>
+          <label class="full">Remarks
+            <textarea name="remarks" rows="2" placeholder="Notes / blockers / materials pending"></textarea>
+          </label>
+        </div>
+        <button class="primary" type="submit">Add Task</button>
+      </form>
+
+      <div class="lists">
+        <div class="list-col">
+          <h3>Open</h3>
+          <ul class="task-list" data-category="site" data-status="Open"></ul>
+        </div>
+        <div class="list-col">
+          <h3>In Progress</h3>
+          <ul class="task-list" data-category="site" data-status="In Progress"></ul>
+        </div>
+        <div class="list-col">
+          <h3>Completed</h3>
+          <ul class="task-list" data-category="site" data-status="Completed"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tender Management -->
+    <section class="tab-panel" id="tab-tender">
+      <h2>Tender Management</h2>
+      <form class="task-form" data-category="tender">
+        <div class="grid">
+          <label>Task Name<input required name="name" placeholder="e.g. Float tender for HVAC"/></label>
+          <label>Start Date<input required type="date" name="startDate"/></label>
+          <label>End Date<input required type="date" name="endDate"/></label>
+          <label>Assign to (Person)<input required name="assignedTo" placeholder="e.g. Priya"/></label>
+          <label>Priority
+            <select name="priority" required>
+              <option value="Low">Low</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="High">High</option>
+            </select>
+          </label>
+          <label>Status
+            <select name="status" required>
+              <option value="Open" selected>Open</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </label>
+          <label>Floor
+            <input name="floor" placeholder="e.g. Basement / GF / 1 / 2 / Mezzanine" />
+          </label>
+          <label class="full">Remarks
+            <textarea name="remarks" rows="2" placeholder="Add vendor list, BOQ, etc."></textarea>
+          </label>
+        </div>
+        <button class="primary" type="submit">Add Task</button>
+      </form>
+
+      <div class="lists">
+        <div class="list-col">
+          <h3>Open</h3>
+          <ul class="task-list" data-category="tender" data-status="Open"></ul>
+        </div>
+        <div class="list-col">
+          <h3>In Progress</h3>
+          <ul class="task-list" data-category="tender" data-status="In Progress"></ul>
+        </div>
+        <div class="list-col">
+          <h3>Completed</h3>
+          <ul class="task-list" data-category="tender" data-status="Completed"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cost Management -->
+    <section class="tab-panel" id="tab-cost">
+      <h2>Cost Management</h2>
+      <form class="task-form" data-category="cost">
+        <div class="grid">
+          <label>Task Name<input required name="name" placeholder="e.g. Update cost report Wk-36"/></label>
+          <label>Start Date<input required type="date" name="startDate"/></label>
+          <label>End Date<input required type="date" name="endDate"/></label>
+          <label>Assign to (Person)<input required name="assignedTo" placeholder="e.g. Vivek"/></label>
+          <label>Priority
+            <select name="priority" required>
+              <option value="Low">Low</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="High">High</option>
+            </select>
+          </label>
+          <label>Status
+            <select name="status" required>
+              <option value="Open" selected>Open</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </label>
+          <label>Floor
+            <input name="floor" placeholder="e.g. Basement / GF / 1 / 2 / Mezzanine" />
+          </label>
+          <label class="full">Remarks
+            <textarea name="remarks" rows="2" placeholder="Variations, VO log, etc."></textarea>
+          </label>
+        </div>
+        <button class="primary" type="submit">Add Task</button>
+      </form>
+
+      <div class="lists">
+        <div class="list-col">
+          <h3>Open</h3>
+          <ul class="task-list" data-category="cost" data-status="Open"></ul>
+        </div>
+        <div class="list-col">
+          <h3>In Progress</h3>
+          <ul class="task-list" data-category="cost" data-status="In Progress"></ul>
+        </div>
+        <div class="list-col">
+          <h3>Completed</h3>
+          <ul class="task-list" data-category="cost" data-status="Completed"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Drawing Management -->
+    <section class="tab-panel" id="tab-drawing">
+      <h2>Drawing Management</h2>
+      <form class="task-form" data-category="drawing">
+        <div class="grid">
+          <label>Task Name<input required name="name" placeholder="e.g. Issue GFC for pantry"/></label>
+          <label>Start Date<input required type="date" name="startDate"/></label>
+          <label>End Date<input required type="date" name="endDate"/></label>
+          <label>Assign to (Person)<input required name="assignedTo" placeholder="e.g. Neha"/></label>
+          <label>Priority
+            <select name="priority" required>
+              <option value="Low">Low</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="High">High</option>
+            </select>
+          </label>
+          <label>Status
+            <select name="status" required>
+              <option value="Open" selected>Open</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </label>
+          <label>Floor
+            <input name="floor" placeholder="e.g. Basement / GF / 1 / 2 / Mezzanine" />
+          </label>
+          <label class="full">Remarks
+            <textarea name="remarks" rows="2" placeholder="Revisions, approvals, etc."></textarea>
+          </label>
+        </div>
+        <button class="primary" type="submit">Add Task</button>
+      </form>
+
+      <div class="lists">
+        <div class="list-col">
+          <h3>Open</h3>
+          <ul class="task-list" data-category="drawing" data-status="Open"></ul>
+        </div>
+        <div class="list-col">
+          <h3>In Progress</h3>
+          <ul class="task-list" data-category="drawing" data-status="In Progress"></ul>
+        </div>
+        <div class="list-col">
+          <h3>Completed</h3>
+          <ul class="task-list" data-category="drawing" data-status="Completed"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Today's Task -->
+    <section class="tab-panel" id="tab-today">
+      <h2>Today's Task</h2>
+      <div class="today-wrap">
+        <div class="today-col">
+          <h3>Site Management</h3>
+          <ul class="task-list today" data-today-category="site"></ul>
+        </div>
+        <div class="today-col">
+          <h3>Tender Management</h3>
+          <ul class="task-list today" data-today-category="tender"></ul>
+        </div>
+        <div class="today-col">
+          <h3>Cost Management</h3>
+          <ul class="task-list today" data-today-category="cost"></ul>
+        </div>
+        <div class="today-col">
+          <h3>Drawing Management</h3>
+          <ul class="task-list today" data-today-category="drawing"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <button id="exportJson" class="ghost">Export JSON</button>
+    <button id="importJson" class="ghost">Import JSON</button>
+    <input type="file" id="importFile" accept="application/json" hidden />
+    <span class="tip">Data auto-saves in your browser (localStorage).</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

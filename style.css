@@ -1,16 +1,16 @@
 :root{
-  --bg:#556B2F;         /* Dark green background */
-  --card:#8A9A23;       /* Olive card background */
-  --ink:#F1F7D9;        /* Text color - very light green */
-  --muted:#C6D56D;      /* Muted text - light olive */
-  --primary:#8A9A23;    /* Primary buttons - olive */
-  --primary-ink:#F1F7D9;/* Text on primary */
-  --accent:#C6D56D;     /* Accent highlights - light olive */
-  --danger:#ef4444;     /* Danger stays red */
-  --warn:#f59e0b;       /* Warning amber */
-  --ok:#10b981;         /* Success green */
-  --ring:#556B2F;       /* Borders - dark green */
-  --chip:#8A9A23;       /* Chip background - olive */
+  --bg:#1e293b;         /* Charcoal Gray background */
+  --card:#f8fafc;       /* Cool White card background */
+  --ink:#f8fafc;        /* Text color - cool white */
+  --muted:#cbd5e1;      /* Muted gray */
+  --primary:#14b8a6;    /* Teal Green primary buttons */
+  --primary-ink:#1e293b;/* Text on primary */
+  --accent:#14b8a6;     /* Accent teal */
+  --danger:#ef4444;     /* Red danger */
+  --warn:#f59e0b;       /* Amber warning */
+  --ok:#10b981;         /* Green success */
+  --ring:#334155;       /* Borders - gray */
+  --chip:#f8fafc;       /* Chip background - white */
 }
 
 *{box-sizing:border-box}
@@ -25,7 +25,7 @@ html,body{
 .app-header{
   padding:18px 20px;
   border-bottom:1px solid var(--ring);
-  background:linear-gradient(180deg,#445923, #556B2F);
+  background:linear-gradient(180deg,#111827,#1e293b);
 }
 .app-header h1{margin:0;font-size:22px}
 .subtitle{margin:6px 0 0;color:var(--muted);font-size:13px}
@@ -36,13 +36,13 @@ html,body{
   flex-wrap:wrap;
   padding:12px 12px;
   border-bottom:1px solid var(--ring);
-  background:#445923;
+  background:#111827;
   position:sticky;
   top:0;
   z-index:5
 }
 .tab-btn{
-  background:#445923;
+  background:#111827;
   border:1px solid var(--ring);
   color:var(--ink);
   padding:8px 12px;
@@ -51,7 +51,7 @@ html,body{
 }
 .tab-btn.active{
   background:var(--accent);
-  color:#041016;
+  color:var(--primary-ink);
   border-color:transparent
 }
 
@@ -68,7 +68,8 @@ h3{margin:0 0 10px;font-weight:600}
   border:1px solid var(--ring);
   padding:12px;
   border-radius:14px;
-  margin-bottom:14px
+  margin-bottom:14px;
+  color:#1e293b; /* dark text inside cards */
 }
 .task-form .grid{
   display:grid;
@@ -80,14 +81,14 @@ h3{margin:0 0 10px;font-weight:600}
   flex-direction:column;
   gap:6px;
   font-size:12px;
-  color:var(--muted)
+  color:var(--ring)
 }
 .task-form input, 
 .task-form select, 
 .task-form textarea{
-  background:#6f802f;
+  background:#f1f5f9;
   border:1px solid var(--ring);
-  color:var(--ink);
+  color:#1e293b;
   padding:10px;
   border-radius:10px;
   font-size:14px
@@ -114,7 +115,8 @@ h3{margin:0 0 10px;font-weight:600}
   border:1px solid var(--ring);
   padding:12px;
   border-radius:14px;
-  min-height:120px
+  min-height:120px;
+  color:#1e293b
 }
 
 .task-list{
@@ -126,12 +128,13 @@ h3{margin:0 0 10px;font-weight:600}
   gap:10px
 }
 .task-card{
-  background:#445923;
+  background:#f1f5f9;
   border:1px solid var(--ring);
   border-radius:12px;
   padding:10px;
   display:grid;
-  gap:8px
+  gap:8px;
+  color:#1e293b
 }
 .row-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .title{font-weight:700}
@@ -142,24 +145,24 @@ h3{margin:0 0 10px;font-weight:600}
   border-radius:999px;
   border:1px solid var(--ring);
   font-size:12px;
-  color:var(--ink)
+  color:#1e293b
 }
-.chip.warn{border-color:var(--warn);color:#ffdd9a}
-.chip.danger{border-color:var(--danger);color:#feb7b7}
-.chip.ok{border-color:var(--ok);color:#bef0d4}
+.chip.warn{border-color:var(--warn);color:#b45309}
+.chip.danger{border-color:var(--danger);color:#b91c1c}
+.chip.ok{border-color:var(--ok);color:#065f46}
 
 .row-actions{display:flex;gap:8px;flex-wrap:wrap}
 .btn{
-  background:#6f802f;
+  background:#f1f5f9;
   border:1px solid var(--ring);
-  color:var(--ink);
+  color:#1e293b;
   padding:6px 10px;
   border-radius:8px;
   cursor:pointer;
   font-size:12px
 }
-.btn.ghost{background:transparent}
-.btn.danger{border-color:var(--danger);color:#fca5a5}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.danger{border-color:var(--danger);color:#dc2626}
 .btn.today{border-color:var(--accent)}
 
 .remarks{color:var(--muted);font-size:12px}
@@ -170,7 +173,8 @@ h3{margin:0 0 10px;font-weight:600}
   background:var(--card);
   border:1px solid var(--ring);
   padding:12px;
-  border-radius:14px
+  border-radius:14px;
+  color:#1e293b
 }
 
 .app-footer{
